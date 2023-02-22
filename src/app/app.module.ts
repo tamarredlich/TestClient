@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './services/api/api.service';
 import { ApiInterceptor } from './interceptors/api.interceptor';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ApiInterceptor } from './interceptors/api.interceptor';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
